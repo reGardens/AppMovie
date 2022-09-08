@@ -20,7 +20,7 @@ function App() {
         </div>
         <div className="right">
           <Link to="/">Home</Link>
-          <Link to="detail">Popular</Link>
+          {/* <Link to="detail">Popular</Link> */}
         </div>
       </nav>
 

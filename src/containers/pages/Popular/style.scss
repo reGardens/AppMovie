@@ -71,3 +71,25 @@ body {
         }
     }
 }
+
+@media only screen and (max-width: 428px) {
+    body {
+        .detali {
+            .dumy {
+                .jmbImg {
+
+                }
+            }
+
+            .desc {
+                .smlImg {
+                    display: none;
+                }
+                .title {
+                    padding-top: 10px;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}

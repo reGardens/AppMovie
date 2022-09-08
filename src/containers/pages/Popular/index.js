@@ -47,7 +47,6 @@ const Popular = () => {
 
     setTimeout(() => {
       getDataAsset();
-      pushRating();
       setLoading(false);
     }, 6000);
   }, []);
@@ -66,36 +65,38 @@ const Popular = () => {
 
       <div className="desc">
         <img className="smlImg" src={`${baseUrl}${detail.poster_path}`}></img>
-        <div className="title"  key={detail.imdb_id}>
+        <div className="title" key={detail.imdb_id}>
           <p>Original Title : {detail.original_title}</p>
           <p>Titiel : {detail.title}</p>
           <p>Overview : {detail.overview}</p>
-          <p  key={detail.imdb_id}>Release : {detail.release_date}</p>
+          <p key={detail.imdb_id}>Release : {detail.release_date}</p>
           <p>
             Give Your Rating :
             {[...Array(5)].map((bintang, index) => {
               const rateValue = index + 1;
               return (
                 <label>
-                    <input
-                      type="radio"
-                      name="rating"
-                      value={rateValue}
-                      onClick={() => setRating(rateValue)}
+                  <input
+                    type="radio"
+                    name="rating"
+                    value={rateValue}
+                    onClick={() => setRating(rateValue)}
+                  />
+                  <IconContext.Provider value={{ className: "star-icon" }}>
+                    <FaStar
+                      className="star"
+                      color={rateValue <= rating ? "#ffc107" : "#e4e5e9"}
                     />
-                    <IconContext.Provider value={{ className: "star-icon" }}>
-                      <FaStar
-                        className="star"
-                        color={rateValue <= rating ? "#ffc107" : "#e4e5e9"}
-                      />
-                    </IconContext.Provider>
+                  </IconContext.Provider>
                 </label>
               );
             })}
-          </p><button onClick={null}>{rating} Star <b>Submit</b></button>
+          </p>
+          <button onClick={pushRating}>
+            {rating} Star <b>Submit</b>
+          </button>
         </div>
       </div>
-      {/* <p>{detail.title}</p>; */}
     </div>
   );
 };

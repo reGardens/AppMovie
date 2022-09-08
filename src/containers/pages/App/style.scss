@@ -10,13 +10,13 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+
         .left {
             font-size: 40px;
             color: white;
         }
+
         .right {
-            display: flex;
-            gap: 20px;
             a {
                 font-size: 20px;
                 color: white;
@@ -24,4 +24,25 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 428px) {
+    .App {
+        nav {
+            margin: 0 10px;
+
+            .left {
+                font-size: 30px;
+            }
+
+            .right {
+                a {
+                    font-size: 18 px;
+
+                }
+
+            }
+        }
+    }
+
 }
